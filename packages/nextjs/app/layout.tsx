@@ -1,23 +1,27 @@
 import type { Metadata } from "next";
 import { ScaffoldStarkAppWithProviders } from "~~/components/ScaffoldStarkAppWithProviders";
 import "~~/styles/globals.css";
-import { ThemeProvider } from "~~/components/ThemeProvider";
+import RootLayoutWrapper from "~~/components/layout/root-layout-wrapper";
+import { Providers } from "~~/components/layout/providers";
 
 export const metadata: Metadata = {
-  title: "Scaffold-Stark",
-  description: "Fast track your starknet journey",
+  title: "StarkPlay",
+  description: "Review and play games on StarkNet",
   icons: "/logo.ico",
 };
 
 const ScaffoldStarkApp = ({ children }: { children: React.ReactNode }) => {
   return (
+    // biome-ignore lint/a11y/useHtmlLang: <explanation>
     <html suppressHydrationWarning>
       <body>
-        <ThemeProvider enableSystem>
-          <ScaffoldStarkAppWithProviders>
-            {children}
-          </ScaffoldStarkAppWithProviders>
-        </ThemeProvider>
+        <Providers>
+          <RootLayoutWrapper>
+            <ScaffoldStarkAppWithProviders>
+              {children}
+            </ScaffoldStarkAppWithProviders>
+          </RootLayoutWrapper>
+        </Providers>
       </body>
     </html>
   );

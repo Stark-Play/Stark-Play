@@ -24,6 +24,7 @@ export const SwitchTheme = ({ className }: { className?: string }) => {
       className={`flex space-x-2 h-5 items-center justify-center text-sm border-l border-neutral px-4 ${className}`}
     >
       {
+        // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
         <label
           htmlFor="theme-toggle"
           className={`swap swap-rotate ${!isDarkMode ? "swap-active" : ""}`}
