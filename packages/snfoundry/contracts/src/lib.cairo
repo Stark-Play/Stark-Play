@@ -1,5 +1,5 @@
-mod YourContract;
+mod vote;
 #[cfg(test)]
 mod test {
-    mod TestContract;
+    mod voteTest;
 }
