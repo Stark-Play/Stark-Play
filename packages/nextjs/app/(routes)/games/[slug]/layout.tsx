@@ -4,7 +4,6 @@ import { Star, Share2, MessageSquare, ArrowRight } from 'lucide-react'
 import { Button } from "~~/components/ui/button"
 import { Badge } from "~~/components/ui/badge"
 import { getGameData } from "~~/lib/gameData"
-import { notFound } from "next/navigation"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -19,7 +18,10 @@ export default async function GameLayout({ children, params }: LayoutProps) {
 
   return (
     <div className="min-h-screen text-white">
-  
+      {/* Hero Banner */}
+      <div className="relative w-full h-[100px] mb-4">
+       
+      </div>
       {/* Breadcrumb */}
       <div className="p-4 text-sm text-gray-400">
         <div className="max-w-7xl mx-auto flex items-center gap-2">
@@ -48,7 +50,7 @@ export default async function GameLayout({ children, params }: LayoutProps) {
                 className="object-cover"
               />
             </div>
-            <h1 className="text-5xl font-bold">{game.title}</h1>
+            <h1 className="text-7xl font-bold">{game.title}</h1>
           </div>
           <div className="flex items-center gap-2">
             <Badge className="w-10 h-10 rounded-lg bg-emerald-500 text-white text-xl font-bold">{game.rating}</Badge>
