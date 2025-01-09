@@ -2,6 +2,8 @@
 
 import { cn } from "~~/lib/utils";
 import { Button } from "~~/components/ui/button";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface HeroProps {
   mainText: string;
@@ -10,9 +12,11 @@ interface HeroProps {
 }
 
 export const Hero = ({ mainText, gradientText, className }: HeroProps) => {
+  const router = useRouter();
+
   return (
     <section className={cn(
-      "relative  w-full flex flex-col items-center justify-center py-16",
+      "relative w-full flex flex-col items-center justify-center py-16",
       className
     )}>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
@@ -24,33 +28,37 @@ export const Hero = ({ mainText, gradientText, className }: HeroProps) => {
         </h1>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-          <Button 
-            className={cn(
-              "px-8 py-6 text-lg rounded-xl",
-              "bg-gradient-to-r from-blue-500 to-cyan-700",
-              "hover:from-blue-600 hover:to-cyan-700",
-              "text-white font-semibold",
-              "transform transition-all hover:scale-105",
-              "shadow-lg hover:shadow-xl",
-              "w-full sm:w-auto"
-            )}
-          >
-            Explore Games Now
-          </Button>
-          <Button 
-            variant="outline"
-            className={cn(
-              "px-8 py-6 text-lg rounded-xl",
-              "border-2 border-white/20",
-              "bg-white/5 hover:bg-white/10",
-              "text-white font-semibold hover:text-white",
-              "transform transition-all hover:scale-105",
-              "backdrop-blur-sm",
-              "w-full sm:w-auto"
-            )}
-          >
-            Register Your Game
-          </Button>
+          <Link href="/games">
+            <Button 
+              className={cn(
+                "px-8 py-6 text-lg rounded-xl",
+                "bg-gradient-to-r from-blue-500 to-cyan-700",
+                "hover:from-blue-600 hover:to-cyan-700",
+                "text-white font-semibold",
+                "transform transition-all hover:scale-105",
+                "shadow-lg hover:shadow-xl",
+                "w-full sm:w-auto"
+              )}
+            >
+              Explore Games Now
+            </Button>
+          </Link>
+          <Link href="/">
+            <Button 
+              variant="outline"
+              className={cn(
+                "px-8 py-6 text-lg rounded-xl",
+                "border-2 border-white/20",
+                "bg-white/5 hover:bg-white/10",
+                "text-white font-semibold hover:text-white",
+                "transform transition-all hover:scale-105",
+                "backdrop-blur-sm",
+                "w-full sm:w-auto"
+              )}
+            >
+              Register Your Game
+            </Button>
+          </Link>
         </div>
       </div>
 

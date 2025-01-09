@@ -1,20 +1,20 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Abi } from "abi-wan-kanabi";
-import { Address } from "@starknet-react/chains";
+import type { Abi } from "abi-wan-kanabi";
+import type { Address } from "@starknet-react/chains";
 import {
-  getFunctionInputKey,
+getFunctionInputKey,
   getInitialFormState,
   getArgsAsStringInputFromForm,
   transformAbiFunction,
-  FormErrorMessageState,
+  type FormErrorMessageState,
   isError,
   getTopErrorMessage,
   decodeContractResponse,
-} from "~~/app/debug/_components/contract";
-import { AbiFunction } from "~~/utils/scaffold-stark/contract";
-import { BlockNumber } from "starknet";
+} from ".";
+import type { AbiFunction } from "~~/utils/scaffold-stark/contract";
+import type { BlockNumber } from "starknet";
 import { useContract, useReadContract } from "@starknet-react/core";
 import { ContractInput } from "./ContractInput";
 

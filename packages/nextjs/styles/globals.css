@@ -142,6 +142,29 @@
   border: 1px solid #5c4fe5;
 }
 
+.card-background {
+  background-color: rgb(191 219 254 / 0.1); /* bg-blue-200/10 */
+  border-color: rgb(243 244 246 / 0.15); /* border-gray-100/15 */
+  transition: all 0.3s ease;
+}
+
+.card-background:hover {
+  border-color: rgb(209 213 219); /* hover:border-gray-300 */
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-lg */
+}
+
+.subcard-background {
+  background-color: rgba(191, 219, 254, 0.191); /* bg-blue-200/10 */
+  border-color: rgba(243, 244, 246, 0.601); /* border-gray-100/15 */
+  transition: all 0.3s ease;
+}
+
+.subcard-background:hover {
+  border-color: rgb(209, 141, 219);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-lg */
+}
+
+
 .bg-modal {
   backdrop-filter: blur(7.449999809265137px);
 }
