@@ -7,6 +7,7 @@ import { Card, CardContent } from "~~/components/ui/card"
 import { Separator } from "~~/components/ui/separator"
 import { useParams } from 'next/navigation'
 import { getGameData } from "~~/lib/gameData"
+import { ReviewForm } from './ReviewForm'
 
 export function GameInfoCard() {
   const params = useParams() as { slug: string }
@@ -17,9 +18,7 @@ export function GameInfoCard() {
   return (
     <>
       {/* Write Review Button */}
-      <Button className="w-full mb-6 h-12" variant="secondary">
-        Write Your Review
-      </Button>
+      <ReviewForm gameId={game.id} gameName={game.title} />
 
       {/* Game Info Card */}
       <Card className="bg-gray-500/20 text-blue-500 hover:bg-gray-500/30">
