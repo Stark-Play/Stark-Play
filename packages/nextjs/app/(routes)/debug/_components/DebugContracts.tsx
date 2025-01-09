@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
-import { ContractUI } from "~~/app/debug/_components/contract";
-import { ContractName } from "~~/utils/scaffold-stark/contract";
+import type { ContractName } from "~~/utils/scaffold-stark/contract";
 import { getAllContracts } from "~~/utils/scaffold-stark/contractsData";
+import { ContractUI } from "./contract";
 
 const selectedContractStorageKey = "scaffoldStark2.selectedContract";
 const contractsData = getAllContracts();
@@ -14,7 +14,7 @@ export function DebugContracts() {
   const [selectedContract, setSelectedContract] = useLocalStorage<ContractName>(
     selectedContractStorageKey,
     contractNames[0],
-    { initializeWithValue: false },
+    { initializeWithValue: false }
   );
 
   useEffect(() => {
@@ -32,6 +32,7 @@ export function DebugContracts() {
           {contractNames.length > 1 && (
             <div className="flex flex-row gap-2 w-full max-w-7xl pb-1 px-6 lg:px-10 flex-wrap">
               {contractNames.map((contractName) => (
+                // biome-ignore lint/a11y/useButtonType: <explanation>
                 <button
                   className={`btn btn-secondary btn-sm font-light hover:border-transparent ${
                     contractName === selectedContract

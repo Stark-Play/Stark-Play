@@ -1,10 +1,10 @@
-import { Abi } from "abi-wan-kanabi";
-import { WriteOnlyFunctionForm } from "~~/app/debug/_components/contract";
+import type { Abi } from "abi-wan-kanabi";
 import {
-  Contract,
-  ContractName,
+  type Contract,
+  type ContractName,
   getFunctionsByStateMutability,
 } from "~~/utils/scaffold-stark/contract";
+import { WriteOnlyFunctionForm } from "./WriteOnlyFunctionForm";
 
 export const ContractWriteMethods = ({
   onChange,

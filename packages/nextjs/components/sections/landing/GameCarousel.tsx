@@ -12,28 +12,52 @@ import {
   CarouselPrevious,
 } from "~~/components/ui/carousel";
 import { GameCard } from "./GameCard";
-import { type CarouselApi } from "~~/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
+import type { CarouselApi } from "~~/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Link from 'next/link';
 
-
-interface GameData {
+interface Game {
   id: string;
   title: string;
-  subtitle: string;
-  image: string;
-  players: string | number;
-  community: string | number;
-  status?: string
+  rating: number;
+  thumbnail: string;
+  banner: string;
+  shortDescription: string;
+  description: string;
+  developer: string;
+  status: "active" | "upcoming" | "ended";
+  platforms: string[];
+  tags: string[];
+  players: string;
+  community: string;
   socialLinks?: {
     twitter?: string;
     discord?: string;
     telegram?: string;
     website?: string;
   };
+  reviews: Array<{
+    id: string;
+    author: string;
+    rating: number;
+    date: string;
+    content: string;
+    helpful: number;
+    notHelpful: number;
+  }>;
+  guides: Array<{
+    id: string;
+    title: string;
+    author: string;
+    date: string;
+    difficulty: string;
+    category: string;
+    excerpt: string;
+  }>;
 }
 
 interface GameCarouselProps {
-  games: GameData[];
+  games: Game[];
   className?: string;
 }
 
@@ -84,7 +108,22 @@ export const GameCarousel = ({ games, className }: GameCarouselProps) => {
               key={game.id} 
               className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
             >
-              <GameCard {...game} />
+              <Link href={`/games/${game.id}`}>
+                <GameCard
+                  id={game.id}
+                  title={game.title}
+                  description={game.shortDescription}
+                  banner={game.banner}
+                  thumbnail={game.thumbnail}
+                  developer={game.developer}
+                  rating={game.rating}
+                  tags={game.tags}
+                  players={game.players}
+                  community={game.community}
+                  status={game.status === 'ended' ? 'completed' : game.status}
+                  socialLinks={game.socialLinks}
+                />
+              </Link>
             </CarouselItem>
           ))}
         </CarouselContent>

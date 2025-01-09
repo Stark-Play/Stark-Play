@@ -8,10 +8,10 @@ import {
   getInitialFormState,
   getArgsAsStringInputFromForm,
   transformAbiFunction,
-  FormErrorMessageState,
+  type FormErrorMessageState,
   getTopErrorMessage,
   isError,
-} from "~~/app/debug/_components/contract";
+} from ".";
 import { useTargetNetwork } from "~~/hooks/scaffold-stark/useTargetNetwork";
 import {
   useSendTransaction,
@@ -19,10 +19,10 @@ import {
   useTransactionReceipt,
   useContract,
 } from "@starknet-react/core";
-import { Abi } from "abi-wan-kanabi";
-import { AbiFunction } from "~~/utils/scaffold-stark/contract";
-import { Address } from "@starknet-react/chains";
-import { InvokeTransactionReceiptResponse } from "starknet";
+import type { Abi } from "abi-wan-kanabi";
+import type { AbiFunction } from "~~/utils/scaffold-stark/contract";
+import type { Address } from "@starknet-react/chains";
+import type { InvokeTransactionReceiptResponse } from "starknet";
 import { TxReceipt } from "./TxReceipt";
 import { useTransactor } from "~~/hooks/scaffold-stark";
 import { useAccount } from "~~/hooks/useAccount";

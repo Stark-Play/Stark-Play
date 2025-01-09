@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { InvokeTransactionReceiptResponse } from "starknet";
+import type { InvokeTransactionReceiptResponse } from "starknet";
 import {
   CheckCircleIcon,
   DocumentDuplicateIcon,
 } from "@heroicons/react/24/outline";
-import { decodeContractResponse } from "~~/app/debug/_components/contract";
+import { decodeContractResponse } from ".";
 
 export const TxReceipt = (
   txResult:
