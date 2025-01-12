@@ -22,8 +22,8 @@ mod GameVoting {
     use core::starknet::ContractAddress;
     use core::starknet::get_caller_address;
     use core::starknet::storage::{
-        StoragePointerReadAccess, StoragePointerWriteAccess, StorageMapReadAccess,
-        StorageMapWriteAccess, Map
+        Map, StorageMapReadAccess, StorageMapWriteAccess, StoragePointerReadAccess,
+        StoragePointerWriteAccess,
     };
 
     const LIKE: u8 = 1_u8;
@@ -37,13 +37,13 @@ mod GameVoting {
         // Voting records
         has_voted: Map::<(ContractAddress, u32), bool>,
         likes: Map::<u32, u32>,
-        dislikes: Map::<u32, u32>
+        dislikes: Map::<u32, u32>,
     }
 
     #[derive(Copy, Drop, Serde, starknet::Store)]
     struct Game {
         game_id_custom: felt252,
-        name: felt252
+        name: felt252,
     }
 
     #[constructor]
@@ -65,11 +65,11 @@ mod GameVoting {
 
         fn add_game(ref self: ContractState, game_id_custom: felt252, game_name: felt252) {
             let new_game_id = self.total_games.read() + 1;
-            
+
             // Store game information
             self.games.write(new_game_id, Game { game_id_custom, name: game_name });
             self.total_games.write(new_game_id);
-            
+
             // Initialize vote counters
             self.likes.write(new_game_id, 0);
             self.dislikes.write(new_game_id, 0);
@@ -77,7 +77,7 @@ mod GameVoting {
 
         fn vote(ref self: ContractState, game_id: u32, is_like: u8) {
             let caller = get_caller_address();
-            
+
             // Validate game exists
             assert!(game_id <= self.total_games.read(), "INVALID_GAME_ID");
             // Check if user hasn't voted before
@@ -85,7 +85,7 @@ mod GameVoting {
 
             // Record vote
             self.has_voted.write((caller, game_id), true);
-            
+
             // Update vote counts
             if is_like == LIKE {
                 self.likes.write(game_id, self.likes.read(game_id) + 1);

@@ -16,11 +16,10 @@ interface PageProps {
 }
 
 export default async function ReviewPage({ params }: PageProps) {
-
   const { slug } = await params;
   const game = getGameData(slug);
-  
-  if (!game) return null
+
+  if (!game) return null;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8">

@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
-import { Share2 } from 'lucide-react'
-import { Button } from "~~/components/ui/button"
-import { Badge } from "~~/components/ui/badge"
-import { Card, CardContent } from "~~/components/ui/card"
-import { Separator } from "~~/components/ui/separator"
-import { useParams } from 'next/navigation'
-import { getGameData } from "~~/lib/gameData"
-import { ReviewForm } from './ReviewForm'
+import { Share2 } from "lucide-react";
+import { Button } from "~~/components/ui/button";
+import { Badge } from "~~/components/ui/badge";
+import { Card, CardContent } from "~~/components/ui/card";
+import { Separator } from "~~/components/ui/separator";
+import { useParams } from "next/navigation";
+import { getGameData } from "~~/lib/gameData";
+import { ReviewForm } from "./ReviewForm";
 
 export function GameInfoCard() {
-  const params = useParams() as { slug: string }
-  const game = getGameData(params?.slug)
+  const params = useParams() as { slug: string };
+  const game = getGameData(params?.slug);
 
-  if (!game) return null
+  if (!game) return null;
 
   return (
     <>
@@ -77,6 +77,5 @@ export function GameInfoCard() {
         </CardContent>
       </Card>
     </>
-  )
+  );
 }
-

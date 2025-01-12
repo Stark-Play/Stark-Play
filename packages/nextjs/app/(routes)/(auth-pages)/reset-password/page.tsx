@@ -43,7 +43,6 @@ export default async function ResetPassword(props: {
           <Button className="w-full" formAction={resetPasswordAction}>
             Update Password
           </Button>
-
         </form>
 
         <div className="mt-4 text-center">

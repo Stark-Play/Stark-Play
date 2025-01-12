@@ -3,7 +3,5 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="container-full gap-12 items-center">{children}</div>
-  );
+  return <div className="container-full gap-12 items-center">{children}</div>;
 }

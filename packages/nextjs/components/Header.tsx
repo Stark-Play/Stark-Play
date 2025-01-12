@@ -78,7 +78,7 @@ export const Header = () => {
                               "h-auto p-0 font-medium text-sm hover:text-[#008CFF]",
                               pathname.startsWith(item.path)
                                 ? "text-[#008CFF]"
-                                : "text-white"
+                                : "text-white",
                             )}
                           >
                             {item.label} <span className="ml-1">▾</span>
@@ -108,7 +108,7 @@ export const Header = () => {
                           "h-auto p-0 font-medium text-sm bg-transparent hover:text-[#008CFF] hover:bg-transparent",
                           pathname === item.path
                             ? "text-[#008CFF]"
-                            : "text-white"
+                            : "text-white",
                         )}
                       >
                         {item.label}
@@ -177,7 +177,7 @@ const MobileNavigation = ({ pathname }: { pathname: string }) => {
                       "text-sm transition-colors hover:text-[#008CFF]",
                       pathname === dropdownItem.path
                         ? "text-[#008CFF]"
-                        : "text-white"
+                        : "text-white",
                     )}
                   >
                     {dropdownItem.label}
@@ -190,7 +190,7 @@ const MobileNavigation = ({ pathname }: { pathname: string }) => {
               href={item.path}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-[#008CFF]",
-                pathname === item.path ? "text-[#008CFF]" : "text-white"
+                pathname === item.path ? "text-[#008CFF]" : "text-white",
               )}
             >
               {item.label}

@@ -133,8 +133,7 @@ export const CTAForm = ({ onSubmit, className = "" }: CTAFormProps) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm text-gray-500 mt-6"
-        >
-        </motion.p>
+        ></motion.p>
       </div>
     </motion.div>
   );
