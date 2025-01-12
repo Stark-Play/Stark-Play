@@ -14,7 +14,7 @@ import {
 import { GameCard } from "./GameCard";
 import type { CarouselApi } from "~~/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import Link from 'next/link';
+import Link from "next/link";
 
 interface Game {
   id: string;
@@ -81,7 +81,9 @@ export const GameCarousel = ({ games, className }: GameCarouselProps) => {
     <section className={cn("w-full max-w-7xl mx-auto px-4 py-8", className)}>
       <div className="flex items-center justify-between mb-6">
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold text-white">Explore latest Games</h2>
+          <h2 className="text-2xl font-bold text-white">
+            Explore latest Games
+          </h2>
           <p className="text-sm text-gray-400">
             Discover our curated selection of blockchain games
           </p>
@@ -104,8 +106,8 @@ export const GameCarousel = ({ games, className }: GameCarouselProps) => {
       >
         <CarouselContent className="-ml-2 md:-ml-4">
           {games.map((game) => (
-            <CarouselItem 
-              key={game.id} 
+            <CarouselItem
+              key={game.id}
               className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
             >
               <Link href={`/games/${game.id}`}>
@@ -120,7 +122,7 @@ export const GameCarousel = ({ games, className }: GameCarouselProps) => {
                   tags={game.tags}
                   players={game.players}
                   community={game.community}
-                  status={game.status === 'ended' ? 'completed' : game.status}
+                  status={game.status === "ended" ? "completed" : game.status}
                   socialLinks={game.socialLinks}
                 />
               </Link>

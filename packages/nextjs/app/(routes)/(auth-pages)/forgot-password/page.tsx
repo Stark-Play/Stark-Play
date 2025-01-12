@@ -7,9 +7,7 @@ import { AuthLayout } from "~~/components/layout/auth/auth-layout";
 import { AuthForm } from "~~/components/layout/auth/auth-form";
 import { Button } from "~~/components/ui/button";
 
-export default async function ForgotPassword(props: {
-  searchParams: any;
-}) {
+export default async function ForgotPassword(props: { searchParams: any }) {
   const searchParams = await props.searchParams;
 
   return (
@@ -62,7 +60,8 @@ const SuccessMessage = ({ email }: SuccessMessageProps) => (
       <h2 className="text-2xl font-semibold">Check Your Email!</h2>
     </div>
     <p className="text-center text-muted-foreground">
-      We’ve sent a recovery link to <strong>{email}</strong>. The link will expire in 24 hours.
+      We’ve sent a recovery link to <strong>{email}</strong>. The link will
+      expire in 24 hours.
     </p>
     <div className="text-center">
       <p className="text-sm text-muted-foreground">

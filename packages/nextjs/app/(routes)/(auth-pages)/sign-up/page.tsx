@@ -66,9 +66,7 @@ export default async function Signup(props: { searchParams: Promise<any> }) {
                 </p>
               </div>
 
-              <Button className="w-full">
-                Create account
-              </Button>
+              <Button className="w-full">Create account</Button>
             </div>
 
             {/* <FormMessage message={searchParams} /> */}

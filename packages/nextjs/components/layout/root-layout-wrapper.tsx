@@ -13,7 +13,6 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <ThemeProvider>
           <div className="flex relative min-h-screen flex-col bg-gradient-to-tr from-cyan-800 via-[#090979] to-[#7a0c00]">
-
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

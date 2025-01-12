@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import type { Abi } from "abi-wan-kanabi";
 import type { Address } from "@starknet-react/chains";
 import {
-getFunctionInputKey,
+  getFunctionInputKey,
   getInitialFormState,
   getArgsAsStringInputFromForm,
   transformAbiFunction,

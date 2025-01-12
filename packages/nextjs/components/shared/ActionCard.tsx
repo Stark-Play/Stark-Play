@@ -4,14 +4,14 @@ import { Input } from "~~/components/ui/input";
 import { Info, Heart } from "lucide-react";
 
 interface ActionCardProps {
-  remainingAmount: number
-  currentAmount: number
-  targetAmount: number
-  minInvestment: number
-  futureShares: number
-  valuationCap: number
-  onInvestmentSubmit: (amount: number) => void
-  onWatchClick: () => void
+  remainingAmount: number;
+  currentAmount: number;
+  targetAmount: number;
+  minInvestment: number;
+  futureShares: number;
+  valuationCap: number;
+  onInvestmentSubmit: (amount: number) => void;
+  onWatchClick: () => void;
 }
 
 export function ActionCard({
@@ -25,10 +25,10 @@ export function ActionCard({
   onWatchClick,
 }: ActionCardProps) {
   function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    const formData = new FormData(e.target as HTMLFormElement)
-    const amount = Number(formData.get('investmentAmount'))
-    onInvestmentSubmit(amount)
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const amount = Number(formData.get("investmentAmount"));
+    onInvestmentSubmit(amount);
   }
 
   return (
@@ -36,12 +36,15 @@ export function ActionCard({
       <CardHeader className="space-y-2 pb-4">
         <div className="flex items-start gap-2 text-sm text-red-500">
           <span>
-            CONDICIONES PARA INVERSORES EN FASES TEMPRANAS: {remainingAmount.toLocaleString()} $ RESTAN
+            CONDICIONES PARA INVERSORES EN FASES TEMPRANAS:{" "}
+            {remainingAmount.toLocaleString()} $ RESTAN
           </span>
           <Info className="h-4 w-4" />
         </div>
         <div className="space-y-1">
-          <div className="text-4xl font-bold">{currentAmount.toLocaleString()} $</div>
+          <div className="text-4xl font-bold">
+            {currentAmount.toLocaleString()} $
+          </div>
           <div className="text-sm text-muted-foreground">
             de un objetivo de {targetAmount.toLocaleString()} $
           </div>
@@ -53,12 +56,14 @@ export function ActionCard({
           <div className="space-y-2">
             <div className="text-sm">INVERTIR</div>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">min. {minInvestment} $</span>
-              <Input 
+              <span className="text-sm text-muted-foreground">
+                min. {minInvestment} $
+              </span>
+              <Input
                 name="investmentAmount"
-                type="number" 
-                placeholder="0" 
-                className="text-right" 
+                type="number"
+                placeholder="0"
+                className="text-right"
                 min={minInvestment}
                 required
               />
@@ -70,7 +75,11 @@ export function ActionCard({
           </Button>
         </form>
 
-        <Button variant="outline" className="w-full gap-2" onClick={onWatchClick}>
+        <Button
+          variant="outline"
+          className="w-full gap-2"
+          onClick={onWatchClick}
+        >
           <Heart className="h-4 w-4" />
           ESTATE ATENTO A LAS ACTUALIZACIONES
         </Button>
@@ -81,9 +90,12 @@ export function ActionCard({
             <div className="flex justify-between">
               <span>Participaciones futuras</span>
               <div>
-                <span className="font-medium">{futureShares.toLocaleString()} $</span>
+                <span className="font-medium">
+                  {futureShares.toLocaleString()} $
+                </span>
                 <span className="text-muted-foreground">
-                  {" "}- {valuationCap.toLocaleString()} $ tope de valoración
+                  {" "}
+                  - {valuationCap.toLocaleString()} $ tope de valoración
                 </span>
               </div>
             </div>
@@ -91,5 +103,5 @@ export function ActionCard({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

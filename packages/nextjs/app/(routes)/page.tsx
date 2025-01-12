@@ -1,11 +1,11 @@
 import { Hero } from "~~/components/sections/landing/Hero";
 import { RewardSection } from "~~/components/sections/landing/RewardSection";
 import { GameCarousel } from "~~/components/sections/landing/GameCarousel";
-import { FeaturesSection } from '~~/components/sections/landing/FeatureCard';
+import { FeaturesSection } from "~~/components/sections/landing/FeatureCard";
 import { UserFlow } from "~~/components/sections/landing/UserFlow";
-import { GameExplorer } from '~~/components/shared/GameExplorer';
+import { GameExplorer } from "~~/components/shared/GameExplorer";
 import { CreatorSection } from "~~/components/sections/landing/CreatorSection";
-import { games } from '~~/lib/gameData';
+import { games } from "~~/lib/gameData";
 
 const Home = () => {
   const heroConfig = {

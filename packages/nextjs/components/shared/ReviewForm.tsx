@@ -1,44 +1,44 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Sword } from 'lucide-react'
-import { Button } from "~~/components/ui/button"
-import { Textarea } from "~~/components/ui/textarea"
-import { Input } from "~~/components/ui/input"
+import { useState } from "react";
+import { Sword } from "lucide-react";
+import { Button } from "~~/components/ui/button";
+import { Textarea } from "~~/components/ui/textarea";
+import { Input } from "~~/components/ui/input";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "~~/components/ui/dialog"
+} from "~~/components/ui/dialog";
 
 interface ReviewFormProps {
-  gameId: string
-  gameName: string
+  gameId: string;
+  gameName: string;
 }
 
 export function ReviewForm({ gameId, gameName }: ReviewFormProps) {
-  const [rating, setRating] = useState(0)
-  const [hoveredRating, setHoveredRating] = useState(0)
-  const [open, setOpen] = useState(false)
+  const [rating, setRating] = useState(0);
+  const [hoveredRating, setHoveredRating] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+
     // Here you would typically send this to your API
     const reviewData = {
       gameId,
       rating,
-      title: formData.get('title'),
-      content: formData.get('content'),
+      title: formData.get("title"),
+      content: formData.get("content"),
       // Add any other fields you need
-    }
+    };
 
-    console.log('Review submitted:', reviewData)
-    setOpen(false) // Close modal after submission
-  }
+    console.log("Review submitted:", reviewData);
+    setOpen(false); // Close modal after submission
+  };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -69,8 +69,8 @@ export function ReviewForm({ gameId, gameName }: ReviewFormProps) {
                   <Sword
                     className={`w-8 h-8 rotate-90 ${
                       star <= (hoveredRating || rating)
-                        ? 'fill-yellow-400 text-black-400'
-                        : 'text-gray-300'
+                        ? "fill-yellow-400 text-black-400"
+                        : "text-gray-300"
                     }`}
                   />
                 </button>
@@ -119,5 +119,5 @@ export function ReviewForm({ gameId, gameName }: ReviewFormProps) {
         </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

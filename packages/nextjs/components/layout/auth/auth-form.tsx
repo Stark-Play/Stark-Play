@@ -1,12 +1,11 @@
-import { cn } from "~~/lib/utils"
+import { cn } from "~~/lib/utils";
 
 interface AuthFormProps {
-  children: React.ReactNode
-  title: string
-  subtitle?: React.ReactNode
-  className?: string
-  footerContent?: React.ReactNode
-
+  children: React.ReactNode;
+  title: string;
+  subtitle?: React.ReactNode;
+  className?: string;
+  footerContent?: React.ReactNode;
 }
 
 export function AuthForm({
@@ -25,5 +24,5 @@ export function AuthForm({
       </div>
       {children}
     </div>
-  )
+  );
 }
