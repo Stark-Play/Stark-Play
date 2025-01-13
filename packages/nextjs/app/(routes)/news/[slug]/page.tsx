@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { getNewsData } from "~~/lib/newsData";
 
 interface NewsPageProps {
@@ -13,6 +15,15 @@ export default async function NewsPage({params}: NewsPageProps) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
+      {/* Botón de volver */}
+      <Link 
+        href="/news" 
+        className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
+      >
+        <ArrowLeft className="h-5 w-5 mr-2" />
+        Back to News
+      </Link>
+
       <h2 className="text-4xl font-bold text-white">{news.title}</h2>
   
       <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
