@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   const socialLinks = [
-    { name: 'Discord', icon: '/discord.svg', href: '#' },
-    { name: 'X', icon: '/x-twitter.svg', href: '#' },
-    { name: 'YouTube', icon: '/youtube.svg', href: '#' },
-    { name: 'Twitch', icon: '/twitch.svg', href: '#' },
-    { name: 'LinkedIn', icon: '/linkedin.svg', href: '#' },
-    { name: 'Telegram', icon: '/telegram.svg', href: '#' },
+    { name: "Discord", icon: "/discord.svg", href: "#" },
+    { name: "X", icon: "/x-twitter.svg", href: "#" },
+    { name: "YouTube", icon: "/youtube.svg", href: "#" },
+    { name: "Twitch", icon: "/twitch.svg", href: "#" },
+    { name: "LinkedIn", icon: "/linkedin.svg", href: "#" },
+    { name: "Telegram", icon: "/telegram.svg", href: "#" },
   ];
 
   return (
@@ -16,13 +16,15 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
         {/* Copyright Text */}
         <p className="text-[#98AAC0] text-center text-sm">
-          Welcome to the future of gaming, by gamers, for gamers © 2025 • StarkPlay All related content, characters, names <br/>
-          and materials that could be part of an existing work, are the exclusive property of their authors.
+          Welcome to the future of gaming, by gamers, for gamers © 2025 •
+          StarkPlay All related content, characters, names <br />
+          and materials that could be part of an existing work, are the
+          exclusive property of their authors.
         </p>
 
         {/* Social Icons */}
         <div className="flex items-center gap-6">
-          <Image 
+          <Image
             src="/stark-play-logo.svg"
             alt="Stark Play"
             width={120}
@@ -30,12 +32,12 @@ export const Footer = () => {
             className="mr-4"
           />
           {socialLinks.map((social) => (
-            <Link 
+            <Link
               key={social.name}
               href={social.href}
               className="text-[#98AAC0] hover:text-[#008CFF] transition-colors"
             >
-              <Image 
+              <Image
                 src={social.icon}
                 alt={social.name}
                 width={24}
@@ -47,19 +49,19 @@ export const Footer = () => {
 
         {/* Footer Links */}
         <div className="flex items-center gap-8">
-          <Link 
+          <Link
             href="/privacy"
             className="text-[#98AAC0] hover:text-[#008CFF] transition-colors"
           >
             Privacy Policy
           </Link>
-          <Link 
+          <Link
             href="/terms"
             className="text-[#98AAC0] hover:text-[#008CFF] transition-colors"
           >
             Terms Of Service
           </Link>
-          <Link 
+          <Link
             href="/register"
             className="text-[#98AAC0] hover:text-[#008CFF] transition-colors"
           >

@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { games } from "~~/lib/gameData"
-import { GameCard } from "~~/components/sections/landing/GameCard"
+import Link from "next/link";
+import { games } from "~~/lib/gameData";
+import { GameCard } from "~~/components/sections/landing/GameCard";
 
 export default function GamesPage() {
   return (
@@ -10,12 +10,17 @@ export default function GamesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {games.map((game) => (
             <Link key={game.id} href={`/games/${game.id}`}>
-               <GameCard key={game.id} {...game} status={game.status as "active" | "upcoming" | "completed" | undefined} />
+              <GameCard
+                key={game.id}
+                {...game}
+                status={
+                  game.status as "active" | "upcoming" | "completed" | undefined
+                }
+              />
             </Link>
           ))}
         </div>
       </main>
     </div>
-  )
+  );
 }
-

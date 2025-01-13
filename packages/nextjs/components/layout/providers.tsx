@@ -1,14 +1,9 @@
-import { ThemeProvider } from "../ThemeProvider"
-
+import { ThemeProvider } from "../ThemeProvider";
 
 interface ProvidersProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function Providers({ children }: ProvidersProps) {
-  return (
-      <ThemeProvider>
-      {children}
-      </ThemeProvider>
-  )
+  return <ThemeProvider>{children}</ThemeProvider>;
 }

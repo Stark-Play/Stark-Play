@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation'
-import { AlertCircle } from 'lucide-react'
-import React from 'react'
-import { Button } from '~~/components/ui/button'
+import { useRouter } from "next/navigation";
+import { AlertCircle } from "lucide-react";
+import React from "react";
+import { Button } from "~~/components/ui/button";
 
 export default function AuthErrorPage() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-4">
@@ -19,18 +19,19 @@ export default function AuthErrorPage() {
             Authentication Error
           </h1>
           <p className="text-sm text-muted-foreground">
-            There was a problem with authentication. Please try signing in again.
+            There was a problem with authentication. Please try signing in
+            again.
           </p>
         </div>
 
         <Button
           variant="default"
-          onClick={() => router.push('/login')}
+          onClick={() => router.push("/login")}
           className="w-full"
         >
           Back to Login
         </Button>
       </div>
     </div>
-  )
+  );
 }

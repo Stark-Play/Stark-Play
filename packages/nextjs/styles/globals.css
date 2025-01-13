@@ -150,7 +150,9 @@
 
 .card-background:hover {
   border-color: rgb(209 213 219); /* hover:border-gray-300 */
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-lg */
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-lg */
 }
 
 .subcard-background {
@@ -161,9 +163,10 @@
 
 .subcard-background:hover {
   border-color: rgb(209, 141, 219);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-lg */
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-lg */
 }
-
 
 .bg-modal {
   backdrop-filter: blur(7.449999809265137px);
@@ -189,16 +192,16 @@
   }
 
   .mask-gradient-border {
-    mask: 
-      linear-gradient(#ffffff 0 0) content-box, 
+    mask:
+      linear-gradient(#ffffff 0 0) content-box,
       linear-gradient(#fff 0 0);
     mask-composite: exclude;
   }
 
-/* Custom Gradients */
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-l from-[#5fc4ff] to-[#2731bb];
-}
+  /* Custom Gradients */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-l from-[#5fc4ff] to-[#2731bb];
+  }
 
   .clip-corner::before {
     content: "";

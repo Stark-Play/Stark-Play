@@ -110,13 +110,16 @@ export const UserFlow = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl font-bold text-white mb-4">
-            Elevate Your Gaming Experience
+              Elevate Your Gaming Experience
             </h2>
-            <h2 className="gradient-text text-4xl font-bold">with StarkPlay Hub</h2>
+            <h2 className="gradient-text text-4xl font-bold">
+              with StarkPlay Hub
+            </h2>
 
             <p className="text-gray-200 max-w-3xl mx-auto text-lg">
-            From discovery to rewards, follow a seamless and rewarding path powered by Starknet’s blockchain. 
-            Every step is designed to maximize your gaming and development potential.
+              From discovery to rewards, follow a seamless and rewarding path
+              powered by Starknet’s blockchain. Every step is designed to
+              maximize your gaming and development potential.
             </p>
           </motion.div>
 

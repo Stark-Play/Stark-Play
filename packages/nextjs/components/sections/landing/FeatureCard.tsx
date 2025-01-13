@@ -1,6 +1,12 @@
 "use client";
 
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "~~/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~~/components/ui/card";
 import { Button } from "~~/components/ui/button";
 import { Shield, Users, Globe } from "lucide-react";
 import { cn } from "~~/lib/utils";
@@ -14,13 +20,21 @@ interface FeatureCardProps {
   variant?: "default" | "secure" | "social" | "web3";
 }
 
-const FeatureCard = ({ title, description, features, icon, className, variant = "default" }: FeatureCardProps) => {
-
+const FeatureCard = ({
+  title,
+  description,
+  features,
+  icon,
+  className,
+  variant = "default",
+}: FeatureCardProps) => {
   return (
-    <Card className={cn(
-      "transition-all duration-300 border bg-blue-200/10 border-gray-100/15 hover:border-gray-300 hover:shadow-lg",
-      className
-    )}>
+    <Card
+      className={cn(
+        "transition-all duration-300 border bg-blue-200/10 border-gray-100/15 hover:border-gray-300 hover:shadow-lg",
+        className,
+      )}
+    >
       <CardHeader className="space-y-4 text-center">
         <div className="w-12 h-12 mx-auto flex items-center justify-center">
           {icon}
@@ -51,8 +65,8 @@ const FeatureCard = ({ title, description, features, icon, className, variant = 
         </ul>
       </CardContent>
       <CardFooter>
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           className="w-full text-white hover:bg-background/5 hover:text-muted"
         >
           Learn More
@@ -79,22 +93,37 @@ export const FeaturesSection = () => {
   const features = [
     {
       title: "For Gamers",
-      description: "Explore a library of Starknet-based games, Engage in quests, write reviews, and participate in community votes to earn tokens, NFTs, and build your reputation.",
-      features: ["Discover New Games", "Earn Rewards", "Connect with the Community"],
+      description:
+        "Explore a library of Starknet-based games, Engage in quests, write reviews, and participate in community votes to earn tokens, NFTs, and build your reputation.",
+      features: [
+        "Discover New Games",
+        "Earn Rewards",
+        "Connect with the Community",
+      ],
       icon: <Shield className="w-8 h-8 text-green-500" />,
       variant: "secure" as const,
     },
     {
       title: "Powered by Blockchain",
-      description: "Every action on StarkPlay Hub is secured by Starknet’s zk-rollup technology, ensuring fast and trustworthy interactions.",
-      features: ["Transparent player and game data", "Immutable records for reviews, votes, and rewards", "Instant, low-cost transactions for seamless participation"],
+      description:
+        "Every action on StarkPlay Hub is secured by Starknet’s zk-rollup technology, ensuring fast and trustworthy interactions.",
+      features: [
+        "Transparent player and game data",
+        "Immutable records for reviews, votes, and rewards",
+        "Instant, low-cost transactions for seamless participation",
+      ],
       icon: <Users className="w-8 h-8 text-blue-500" />,
       variant: "social" as const,
     },
     {
       title: "For Game Developers",
-      description: "List your Starknet-based game to gain visibility. Receive valuable insights from player reviews and ratings to refine your game",
-      features: ["Showcase Your Game", "Community Feedback", "Crowdfunding Opportunities"],
+      description:
+        "List your Starknet-based game to gain visibility. Receive valuable insights from player reviews and ratings to refine your game",
+      features: [
+        "Showcase Your Game",
+        "Community Feedback",
+        "Crowdfunding Opportunities",
+      ],
       icon: <Globe className="w-8 h-8 text-purple-500" />,
       variant: "web3" as const,
     },
@@ -105,12 +134,16 @@ export const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-4xl font-bold text-white">
-          Empowering Gamers and Game Developers Alike{" "}
+            Empowering Gamers and Game Developers Alike{" "}
           </h2>
-          <span className="text-cyan-500 text-2xl font-bold">Powered by Starknet</span>
+          <span className="text-cyan-500 text-2xl font-bold">
+            Powered by Starknet
+          </span>
           <p className="text-gray-300 max-w-3xl mx-auto">
-          At StarkPlay Hub, we bridge the gap between players seeking immersive experiences and developers aiming to showcase their creations.
-          Our platform is designed to cater to the needs of both communities, fostering a thriving ecosystem where everyone benefits
+            At StarkPlay Hub, we bridge the gap between players seeking
+            immersive experiences and developers aiming to showcase their
+            creations. Our platform is designed to cater to the needs of both
+            communities, fostering a thriving ecosystem where everyone benefits
           </p>
         </div>
 

@@ -15,10 +15,12 @@ export const Hero = ({ mainText, gradientText, className }: HeroProps) => {
   const router = useRouter();
 
   return (
-    <section className={cn(
-      "relative w-full flex flex-col items-center justify-center py-16",
-      className
-    )}>
+    <section
+      className={cn(
+        "relative w-full flex flex-col items-center justify-center py-16",
+        className,
+      )}
+    >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
           <span className="block mb-2">{mainText}</span>
@@ -29,7 +31,7 @@ export const Hero = ({ mainText, gradientText, className }: HeroProps) => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link href="/games">
-            <Button 
+            <Button
               className={cn(
                 "px-8 py-6 text-lg rounded-xl",
                 "bg-gradient-to-r from-blue-500 to-cyan-700",
@@ -37,14 +39,14 @@ export const Hero = ({ mainText, gradientText, className }: HeroProps) => {
                 "text-white font-semibold",
                 "transform transition-all hover:scale-105",
                 "shadow-lg hover:shadow-xl",
-                "w-full sm:w-auto"
+                "w-full sm:w-auto",
               )}
             >
               Explore Games Now
             </Button>
           </Link>
-          <Link href="/">
-            <Button 
+          <Link href="/games/new">
+            <Button
               variant="outline"
               className={cn(
                 "px-8 py-6 text-lg rounded-xl",
@@ -53,7 +55,7 @@ export const Hero = ({ mainText, gradientText, className }: HeroProps) => {
                 "text-white font-semibold hover:text-white",
                 "transform transition-all hover:scale-105",
                 "backdrop-blur-sm",
-                "w-full sm:w-auto"
+                "w-full sm:w-auto",
               )}
             >
               Register Your Game
