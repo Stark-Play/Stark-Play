@@ -15,7 +15,6 @@ export default async function NewsPage({params}: NewsPageProps) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
-      {/* Botón de volver */}
       <Link 
         href="/news" 
         className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
