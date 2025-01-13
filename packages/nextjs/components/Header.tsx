@@ -25,6 +25,7 @@ import {
   SheetTrigger,
 } from "~~/components/ui/sheet";
 import { cn } from "~~/lib/utils";
+import ConnectWallet from "~~/components/ui/ConnectWalletButton";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -130,6 +131,10 @@ export const Header = () => {
             >
               Login
             </Button>
+
+            <div className="flex items-center space-x-4">
+              <ConnectWallet />
+            </div>
 
             {/* Mobile menu */}
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>

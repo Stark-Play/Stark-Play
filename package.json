@@ -28,7 +28,11 @@
     "verify": "yarn workspace @ss-2/snfoundry verify"
   },
   "dependencies": {
-    "postcss": "^8.4.38"
+    "@argent/get-starknet": "^6.4.7",
+    "get-starknet": "3.3.0",
+    "postcss": "^8.4.38",
+    "starknet": "6.11.0",
+    "starknetkit": "^1.1.5"
   },
   "devDependencies": {
     "daisyui": "^4.7.3",
