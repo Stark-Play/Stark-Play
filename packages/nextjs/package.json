@@ -30,6 +30,7 @@
     "@radix-ui/react-separator": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.2",
+    "@radix-ui/react-toast": "^1.2.4",
     "@radix-ui/themes": "2.0.3",
     "@scaffold-stark/stark-burner": "0.1.8",
     "@starknet-io/types-js": "^0.7.7",

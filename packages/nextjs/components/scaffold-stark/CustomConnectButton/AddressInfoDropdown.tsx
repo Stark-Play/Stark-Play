@@ -54,13 +54,13 @@ export const AddressInfoDropdown = ({
     dropdownRef.current?.removeAttribute("open");
   };
 
-  // @ts-expect-error ref are initialized with null by default
   useOutsideClick(dropdownRef, closeDropdown);
 
   function handleConnectBurner(
     e: React.MouseEvent<HTMLButtonElement>,
     ix: number,
   ) {
+    // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
     const connector = connectors.find((it) => it.id == "burner-wallet");
     if (connector && connector instanceof BurnerConnector) {
       connector.burnerAccount = burnerAccounts[ix];

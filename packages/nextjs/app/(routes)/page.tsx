@@ -6,7 +6,7 @@ import { UserFlow } from "~~/components/sections/landing/UserFlow";
 import { GameExplorer } from '~~/components/shared/GameExplorer';
 import { CreatorSection } from "~~/components/sections/landing/CreatorSection";
 import { games } from '~~/lib/gameData';
-import ConnectWalletButton from "~~/components/ui/ConnectWalletButton";
+import ConnectWalletButton from "~~/components/shared/ConnectWalletButton";
 
 
 
@@ -26,7 +26,6 @@ const Home = () => {
       <UserFlow />
       <FeaturesSection />
       <CreatorSection />
-      <ConnectWalletButton />
     </div>
   );
 };

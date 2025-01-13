@@ -25,7 +25,7 @@ import {
   SheetTrigger,
 } from "~~/components/ui/sheet";
 import { cn } from "~~/lib/utils";
-import ConnectWallet from "~~/components/ui/ConnectWalletButton";
+import ConnectWallet from "~~/components/shared/ConnectWalletButton";
 
 const navItems = [
   { label: "Home", path: "/" },
