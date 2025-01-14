@@ -1,7 +1,9 @@
-// TODO: We need to create the other sections
+import { MonthlyAwards } from "~~/components/sections/awards/MonthlyAwards";
 
-const Home = () => {
-  return <div className="flex flex-col min-h-screen"></div>;
-};
-
-export default Home;
+export default function MonthlyAwardsPage() {
+  return (
+    <main className="flex flex-col min-h-screen">
+      <MonthlyAwards />
+    </main>
+  );
+}
