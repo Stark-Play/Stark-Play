@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "~~/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, Users, Rocket } from "lucide-react";
+import Link from "next/link";
 
 export const UserFlow = () => {
   const [activeView, setActiveView] = React.useState<"game" | "gamer">("game");
@@ -206,7 +207,9 @@ export const UserFlow = () => {
             size="lg"
             className="bg-cyan-500 hover:bg-cyan-600 text-white px-8"
           >
-            {activeView === "game" ? "Register Your Game" : "Explore Games"}
+            <Link href={activeView === "game" ? "/games/new" : "/games"}>
+              {activeView === "game" ? "Register Your Game" : "Explore Games"}
+            </Link>
           </Button>
         </motion.div>
       </div>
